@@ -1,0 +1,36 @@
+:root {
+    
+    --main-color: #EFDDB5;
+    --secondary-color: #A0DED9;
+    --tertiary-color: #fff;
+    --quaternary-color: #000;
+
+    --faded-tan: rgba(255, 255, 255, 0.25);
+    --faded-teal:  rgba(160, 222, 217, 0.25);
+
+    --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --inner-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    --font: 'Montserrat', sans-serif;
+    /*put in head of HTML
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" rel="stylesheet">
+*/
+    --font-size-1: 28px;
+    --font-size-2: 20px;
+    --font-size-3: 14px;
+    --font-size-4: 12px;
+
+    --font-style: normal;
+    --font-regular: 400;
+    --font-bold: 700;
+
+  }
+  
+
+* {
+    font-family: var(--font);
+    font-style: var(--font-style);
+}
