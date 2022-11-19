@@ -1,0 +1,20 @@
+{{!-- all classes --}}
+{{!-- add a hamburger menu --}}
+<main>
+    <h1>November</h1>
+    <div>
+        {{!-- dates to click --}}
+    </div>
+    <div>
+        {{#each classes}}
+        {{!-- scrolling list of current classes --}}
+        <p>{{this.time}}</p>
+        <p>{{this.name}}</p>
+        <p>{{this.location}}</p>
+        <a src="{{!-- got to detial for given post --}}"><p>Details</p></a>
+        {{/each}}
+    </div>
+    <img src="">
+    <p>Classes</p>
+    <a scr="{{!-- go to schedule page --}}"><p>Schedule</p></a>
+</main>

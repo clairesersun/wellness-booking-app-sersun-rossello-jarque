@@ -1,0 +1,22 @@
+{{!-- details for classes - do an if it is booked do this and if it is not do this --}}
+
+<main>
+<h1>
+    {{classes.name}}
+</h1>
+<div>
+    <h2>{{classes.when}}</h2>
+    <p>{{classes.description}}</p>
+    <p>{{classes.location}}</p>
+    <img src="{{classes.locationImg}}">
+</div>
+{{#if classes.booked}}
+<a scr="{{!-- go to previous page --}}"><p>Back</p></a>
+<a scr="{{!-- pop up to confirm --}}"><p>Cancel</p></a>
+{{/if}}
+{{#if !classes.booked}}
+<a src="{{!-- go to previous page --}}"><p>Back</p></a>
+<a src="{{!-- pop up to confirm --}}"><p>Book</p></a>
+{{/if}}
+
+</main>
