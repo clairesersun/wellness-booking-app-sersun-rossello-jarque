@@ -58,7 +58,7 @@ connection.once("open", async function () {
   ]);
   
 
-    await Promise.all(classes.map((post) => post.save()));
+    await Promise.all(classes.map((classes) => classes.save()));
 
   connection.close();
 });
