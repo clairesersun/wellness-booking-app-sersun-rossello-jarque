@@ -1,10 +1,10 @@
 const { Schema, model, models } = require('mongoose');
 
-const TagSchema = new Schema({
+const ClassInfoSchema = new Schema({
     // Create a classes property with type String and make it required
     name: {
         type: String,
-        required: true,
+        required: true
     },
     when: {
         type: Date,
@@ -20,13 +20,17 @@ const TagSchema = new Schema({
     }, 
     description: {
         type: String,
-        required: true,
+        required: true
+    },
+    img: {
+      type: String,
+      required: true
     },
     location: {/* This is where the api comes in */
         type: String,
-        required: true,
+        required: true
     },
-    booked:{
+    booked: {
         type: Boolean,
         default: false
     },
@@ -43,8 +47,8 @@ const TagSchema = new Schema({
 // Turns the first five words of the title and lowercases them
 // and joins them on hypens.
 // Ex: The Trouble With JavaScript => the-trouble-with-javascript
-PostSchema.pre('save', async function(next) {
-  this.slug = this.title
+ClassInfoSchema.pre('save', async function(next) {
+  this.slug = this.ObjectId
     .split(' ')
     .slice(0, 5)
     .join('-')
@@ -52,3 +56,5 @@ PostSchema.pre('save', async function(next) {
     .replace(/[',.*\?\!\\\$@;:"]/, "")
   next()
 })
+
+module.exports = models.ClassInfo || model('ClassInfo', ClassInfoSchema)

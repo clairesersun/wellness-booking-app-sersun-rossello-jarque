@@ -1,6 +1,7 @@
-const { Classes } = require('../models/Index')
+const { ClassInfo } = require('../models')
 
 //Renders the view of all class details for particular day
+
 // async function classDetails(req, res) {
 //     try {
 //         // get by single tag id if included
@@ -37,27 +38,37 @@ const { Classes } = require('../models/Index')
 
 //Renders the class details
 async function classDetails (req, res, next) {
-    try{
-        const slug = req.params.slug
-    // TODO: Find a single post
-    // find a single class by slug
-    // you will need to use .lean() or .toObject()
-    const classes = await Classes.findOne({slug}).lean()
+    try {
+        const classId = req.params
+    //Find a single class by when
+    const classDetails = await ClassInfo.findById(classId)
     
-    classes.when = new Date(classes.time).toLocaleString('en-US', {
+    classDetails.when = new Date(classDetails.when).toLocaleString('en-US', {
         weekday: 'short',
         month: 'short',
         day: 'numeric',
         time: 'numeric',
     })
+    
+    classDetails.date = new Date(classDetails.date).toLocaleString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+    })
+    classDetails.time = new Date(classDetails.time).toLocaleString('en-US', {
+        time: 'numeric',
+    })
 
-    res.render('class-details', {classes, isLoggedIn: req.session.isLoggedIn})
+    res.render('classes/:slug', {classDetails, isLoggedIn: req.session.isLoggedIn})
     } catch(err) {
     res.status(500).send(err.message)
     }
 }
 
-//Renders the view of the next booked class
+//remove booking + add booking
+async function updateBooking (req, res, next) {
+// how????
+}
 
 
 // // Renders the create post page
@@ -89,4 +100,5 @@ async function classDetails (req, res, next) {
 
 module.exports = {
     classDetails,
+    updateBooking
 }

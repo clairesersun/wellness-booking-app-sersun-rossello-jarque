@@ -5,10 +5,28 @@
     <h1>My Schedule</h1>
     <div>
         {{!-- carousel of booked classes --}}
+        {{#each bookedClasses}}
+        <a href="/classes/{{slug}}"> 
+            <div>
+                <h2>{{name}}</h2>
+                <img src="{{img}}">
+                <p>{{when}}</p>
+                <p>{{location}}</p>
+                <img src="{{locationImg}}">
+            </div>
+        </a>
+        {{/each}}
     </div>
     <div>
         {{!-- next class --}}
+        {{#if nextClassDetails}}
+        <a href="/classes/{{slug}}">
+            <h2>Up Next: {{name}}</h2>
+            <p>{{when}}</p>
+        </a>
+        {{/if}}
     </div>
-    <a src="{{!-- go to classes page --}}"><p>Classes</p></a>
-    <p>Schedule</p>
+
+    <a src="/classes"><button>Classes</button></a>
+    <button>Schedule</button>
 </main>

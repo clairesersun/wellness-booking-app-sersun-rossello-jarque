@@ -2,13 +2,13 @@
 
 <main>
 <h1>
-    {{classes.name}}
+    {{name}}
 </h1>
 <div>
-    <h2>{{classes.when}}</h2>
-    <p>{{classes.description}}</p>
-    <p>{{classes.location}}</p>
-    <img src="{{classes.locationImg}}">
+    <h2>{{when}}</h2>
+    <p>{{description}}</p>
+    <p>{{location}}</p>
+    <img src="{{locationImg}}">
 </div>
 {{#if classes.booked}}
 <a scr="{{!-- go to previous page --}}"><p>Back</p></a>
@@ -20,3 +20,15 @@
 {{/if}}
 
 </main>
+<script>
+  document.querySelectorAll('.cancel-btn').forEach(btn => {
+    btn.onclick = function(e) {
+      const {postId} = e.target.dataset
+      fetch('/api/classes/' + classId, {method: 'UPDATE'})
+        .then(function(res) {
+          if (res.status === 200)
+            window.location.reload()
+        })
+    }
+  })
+</script>
