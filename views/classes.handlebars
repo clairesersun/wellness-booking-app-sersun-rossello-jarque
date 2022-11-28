@@ -1,38 +1,45 @@
 {{!-- all classes --}}
-{{!-- add a hamburger menu --}}
-<main>
-    <h1>November</h1>
-    <div>
-        {{!-- dates to click 
-        make it into two rows with the day of week on top and # on bottom
-        maybe flexbox? or grid
-        
-        how would you define when it is clicked? and to show the dates info? --}}
-        <p>M</p>
-        <p>T</p>
-        <p>W</p>
-        <p>T</p>
-        <p>F</p>
-        <p>S</p>
-        <p>S</p>
-        <p>28</p>
-        <p>29</p>
-        <p>30</p>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
+<div class="classes-background">
+        <!-- hamburger btn -->
+        <main class="main-container">
+            <h1 class="white-heading">November</h1>
+            <div class="schedule-rows">
+                <p class="schedule-rows-item schedule-rows-number">28</p>
+                <p class="schedule-rows-item schedule-rows-number">29</p>
+                <p class="schedule-rows-item schedule-rows-number">30</p>
+                <p class="schedule-rows-item schedule-rows-number">1</p>
+                <p class="schedule-rows-item schedule-rows-number">2</p>
+                <p class="schedule-rows-item schedule-rows-number">3</p>
+                <p class="schedule-rows-item schedule-rows-number">4</p>
+                <button class="schedule-rows-item schedule-rows-day">M</button>
+                <button class="schedule-rows-item schedule-rows-day">T</button>
+                <button class="schedule-rows-item schedule-rows-day">W</button>
+                <button class="schedule-rows-item schedule-rows-day">T</button>
+                <button class="schedule-rows-item schedule-rows-day">F</button>
+                <button class="schedule-rows-item schedule-rows-day">S</button>
+                <button class="schedule-rows-item schedule-rows-day">S</button>
+            </div>
+            <div class="divider"></div>
+            {{#each classes}}
+                {{!-- scrolling list of current classes --}}
+                <div class="daily-schedule-containter">
+                <p class="daily-schedule-item daily-schedule-item-time">{{time}}</p>
+                <div class="daily-schedule-item daily-schedule-item-2">
+                    <p class="daily-schedule-name">{{name}}</p>
+                    <p class="daily-schedule-location">{{location}}</p>
+                </div>
+                <a src="{{!-- got to detial for given post --}}" class="daily-schedule-item daily-schedule-item-btn"><button class="action-btn">Details</button></a>
+                <div class="daily-schedule-div"></div>
+            </div>
+            {{/each}}
+            <div class="divider"></div>
+            <div class="bottom-align">
+            <img src="" class="img-classes">    {{!-- ask for this --}}
+            <button class="classes-btn-clicked"> Classes </button>
+            <a scr="{{!-- go to schedule page --}}"><button class="schedule-btn">Schedule</button></a>
+        </div>
+        </main>
     </div>
-    <div>
-        {{#each classes}}
-        {{!-- scrolling list of current classes --}}
-        <p>{{time}}</p>
-        <p>{{name}}</p>
-        <p>{{location}}</p>
-        <a src="{{!-- got to detial for given post --}}"><button>Details</button></a>
-        {{/each}}
-    </div>
-    <img src="">    {{!-- ask for this --}}
-    <button>Classes</button>
-    <a scr="{{!-- go to schedule page --}}"><p>Schedule</p></a>
-</main>
+        <script src="/index.js">
+            // on click btn in schedule, the classes change to given day and the day's background gets changed to teal
+        </script>

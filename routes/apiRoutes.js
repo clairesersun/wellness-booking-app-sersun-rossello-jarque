@@ -4,7 +4,7 @@ const checkAuth = require('../middleware/auth')
 
 router
     .route('/classes/:id')
-    .put(checkAuth, controllers.classdetails.updateBooking)
+    .put(checkAuth, controllers.classdetails.cancelBooking)
 
 // admin login/logout
 // router.post('/login', controllers.auth.login)

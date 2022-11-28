@@ -1,34 +1,46 @@
 {{!-- details for classes - do an if it is booked do this and if it is not do this --}}
 
-<main>
-<h1>
-    {{name}}
-</h1>
-<div>
-    <h2>{{when}}</h2>
-    <p>{{description}}</p>
-    <p>{{location}}</p>
-    <img src="{{locationImg}}">
-</div>
-{{#if classes.booked}}
-<a scr="{{!-- go to previous page --}}"><p>Back</p></a>
-<a scr="{{!-- pop up to confirm --}}"><p>Cancel</p></a>
-{{/if}}
-{{#if !classes.booked}}
-<a src="{{!-- go to previous page --}}"><p>Back</p></a>
-<a src="{{!-- pop up to confirm --}}"><p>Book</p></a>
-{{/if}}
-
-</main>
-<script>
-  document.querySelectorAll('.cancel-btn').forEach(btn => {
-    btn.onclick = function(e) {
-      const {postId} = e.target.dataset
-      fetch('/api/classes/' + classId, {method: 'UPDATE'})
-        .then(function(res) {
-          if (res.status === 200)
-            window.location.reload()
-        })
-    }
-  })
-</script>
+<div class="classes-background">
+        <main>
+            <h1 class="white-heading">
+                {{name}}
+            </h1>
+            <div class="text-box-container">
+                <h2 class="thin-text">{{when}}</h2>
+                <p class="bold-text">{{description}}</p>
+                <p class="thin-text">{{location}}</p>
+                <img src="{{locationImg}}" class="location-img">
+            </div>
+            {{#if classes.booked}}
+            <a scr="{{!-- go to previous page --}}" class="back-btn"><p>Back</p></a>
+            <a scr="{{!-- pop up to confirm --}}" class="cancel-btn action-btn"><p>Cancel</p></a>
+            {{/if}}
+            {{#if !classes.booked}}
+            <a src="{{!-- go to previous page --}}" class="back-btn"><p>Back</p></a>
+            <a src="{{!-- pop up to confirm --}}" class="book-btn action-btn"><p>Book</p></a>
+            {{/if}}
+            
+            </main>
+        </div>
+            <script>
+              document.querySelectorAll('.cancel-btn').forEach(btn => {
+                btn.onclick = function(e) {
+                  const {classId} = e.target.dataset
+                  fetch('/api/classes/' + classId, {method: 'UPDATE'})
+                    .then(function(res) {
+                      if (res.status === 200)
+                        window.location.reload()
+                    })
+                }
+              })
+               document.querySelectorAll('.book-btn').forEach(btn => {
+                btn.onclick = function(e) {
+                  const {classId} = e.target.dataset
+                  fetch('/api/classes/' + classId, {method: 'UPDATE'})
+                    .then(function(res) {
+                      if (res.status === 200)
+                        window.location.reload()
+                    })
+                }
+              })
+            </script>

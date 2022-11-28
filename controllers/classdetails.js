@@ -59,46 +59,51 @@ async function classDetails (req, res, next) {
         time: 'numeric',
     })
 
-    res.render('classes/:slug', {classDetails, isLoggedIn: req.session.isLoggedIn})
+    res.render('classes/:id', {classDetails, isLoggedIn: req.session.isLoggedIn})
     } catch(err) {
     res.status(500).send(err.message)
     }
 }
 
 //remove booking + add booking
-async function updateBooking (req, res, next) {
-// how????
-}
+async function cancelBooking(req, res) {
+    try {
+    //   const {booked} = req.body
+      const classId = req.params.id
+      // find and update the class with the booked = false
+      const classUnbooked = await ClassInfo.findOneAndUpdate(
+        {_id: classId},
+        {$set: {booked} = false}
+      )
+      return res
+        .status(200)
+        .json(classUnbooked)
+        .redirect('./booked-classes/')
+    } catch(err) {
+      res.status(500).send(err.message)
+    }
+  }
 
-
-// // Renders the create post page
-// async function createPost(req, res, next) {
-//   const tags = await Tag.find().lean().catch(next)
-//   res.render('write-post', {tags, isLoggedIn: req.session.isLoggedIn})
-// }
-
-// // Renders the edit post page
-// async function editPost(req, res) {
-//   try {
-//     const {slug} = req.params
-//     let [post, tags] = await Promise.all([
-//       Post.findOne({slug}).lean(),
-//       Tag.find().lean()
-//     ])
-//     //must convert _ids to strings
-//     post.tags = post.tags.map(tag => tag.toString())
-//     tags = tags.map(tag => {
-//       if(post.tags.includes(tag._id.toString()))
-//         tag.checked = true
-//       return tag
-//     })
-//     res.render('write-post', {post, tags, isLoggedIn: req.session.isLoggedIn})
-//   } catch(err) {
-//     res.status(500).send(err.message)
-//   }
-// }
+  async function book(req, res) {
+    try {
+    //   const {booked} = req.body
+      const classId = req.params.id
+      // find and update the class with the booked = false
+      const bookClass = await ClassInfo.findOneAndUpdate(
+        {_id: classId},
+        {$set: {booked} = true}
+      )
+      return res
+        .status(200)
+        .json(bookClass)
+        .redirect('./booked-classes/')
+    } catch(err) {
+      res.status(500).send(err.message)
+    }
+  }
 
 module.exports = {
     classDetails,
-    updateBooking
+    cancelBooking,
+    book
 }
