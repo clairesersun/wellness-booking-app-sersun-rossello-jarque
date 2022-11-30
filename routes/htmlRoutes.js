@@ -8,6 +8,12 @@ router.get('/admin', (req, res) => {
   res.redirect('/admin/login')
 })
 
+router.get("signUp", async(req, res) => {
+  if (req.session.isLoggedIn)
+    return res.redirect('/')
+  res.render("signUp", {error: req.query.error});
+})
+
 // admin login page
 router.get("/login", async (req, res) => {
   if (req.session.isLoggedIn)
