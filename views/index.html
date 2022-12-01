@@ -11,6 +11,44 @@
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" rel="stylesheet">
       </head>
       <body>
-        
+        <div class="classes-background">
+          <main>
+              <h1 class="white-heading">My Schedule</h1>
+              <div class="slider-container">
+                  {{!-- carousel of booked classes --}}
+                  
+                      <div class="slider">
+                        {{#each bookedClasses}}
+                        <a href="/classes/{{slug}}" class="slider-links"> 
+                          <div class="slides">
+                            <div>
+                              <h2 class="slider-name">{{name}}</h2>
+                              <img src="{{img}}" class="slider-img">
+                              <p class="slider-when">{{when}}</p>
+                              <p class="slider-location">{{location}}</p>
+                              <img src="{{locationImg}}" class="slider-location-img">
+                            </div>
+                          </div>
+                        </a>
+                        {{/each}}
+                      </div>
+              </div>
+              {{!-- next class --}}
+              {{#if nextClassDetails}}
+              <div class="next-class-btn">
+                  <a href="/classes/{{slug}}" class="next-class-link">
+                      <h2 class="next-class-heading">Up Next: 
+                        <div class="next-class-name">{{name}}</div>
+                      </h2>
+                      <p class="next-class-when">{{when}}</p>
+                  </a>
+              </div>
+              {{/if}}
+            <div class="bottom-align">
+              <a src="/classes" class="classes-btn"><button>Classes</button></a>
+              <button class="schedule-btn-clicked">Schedule</button>
+            </div>
+          </main>
+          </div>
       </body>
 </html>

@@ -24,7 +24,6 @@
     --font-style: normal;
     --font-regular: 400;
     --font-bold: 700;
-
   }
   
 
@@ -41,6 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .main-container {
@@ -164,6 +164,38 @@
     margin-top: 20px;
 }
 
+.classes-btn {
+    display: inline-block;
+    border: 0;
+    font-weight: var(--font-regular);
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    border-radius: var(--round-corners);
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: var(--box-shadow);
+    margin-left: 8vw;
+    margin-top: 20px;
+}
+
+.schedule-btn-clicked {
+    display: inline-block;
+    border: 0;
+    font-weight: var(--font-regular);
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    border-radius: var(--round-corners);
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: var(--inner-shadow);
+    margin-right: 8vw;
+    margin-top: 20px;
+}
+
 .daily-schedule-containter {
     display: grid;
     gap: 0;
@@ -236,4 +268,158 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.slider-container {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.slider {
+    width: 50vw;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .slider-links {
+    text-decoration: none;
+  }
+  
+.slides {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: var(--faded-tan);
+    border-radius: var(--round-corners);
+    box-shadow: var(--box-shadow);
+    
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    
+    
+    
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    /*
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+    */
+  }
+  .slides::-webkit-scrollbar {
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+  }
+  .slides::-webkit-scrollbar-thumb {
+    box-sizing: border-box;
+    background: var(--quaternary-color);
+    border-radius: var(--round-corners);
+  }
+  .slides::-webkit-scrollbar-track {
+    box-sizing: border-box;
+    background: transparent;
+  }
+  /* .slides > div {
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+  } */
+  .slides > div:target {
+    box-sizing: border-box;
+  /*   transform: scale(0.8); */
+  }
+  .slider-name {
+    color: var(--quaternary-color);
+    font-weight: var(--font-regular);
+    padding: 0.75rem;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .slider-img {
+    display: inline-block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slider-when {
+    display: inline-block;
+    color: var(--quaternary-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider-location {
+    display: inline-block;
+    color: var(--quaternary-color);
+    top: 0;
+    left: 0;
+  }
+  .slider-location-img {
+    display: inline-block;
+    color: var(--quaternary-color);
+    top: 0;
+    left: 0;
+  }
+
+.next-class-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    text-align: center;
+    background-color: var(--faded-tan);
+    border-radius: var(--round-corners);
+    box-shadow: var(--box-shadow);
+}
+
+.next-class-link {
+    text-decoration: none;
+    color: var(--quaternary-color);
+    padding: 5px;
+}
+
+.next-class-heading {
+    color: var(--tertiary-color);
+    font-weight: var(--font-regular);
+}
+
+.next-class-name {
+    display: inline-block;
+    font-weight: var(--font-regular);
+    color: var(--quaternary-color);
+}
+
+.next-class-when {
+    color: var(--quaternary-color);
+    font-weight: var(--font-regular);
 }
