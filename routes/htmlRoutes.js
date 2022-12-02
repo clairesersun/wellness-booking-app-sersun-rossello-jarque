@@ -7,7 +7,7 @@ router.get('/admin', (req, res) => {
     return res.redirect('/')
   res.redirect('/admin/login')
 })
-
+// sign up page
 router.get("signUp", async(req, res) => {
   if (req.session.isLoggedIn)
     return res.redirect('/')
@@ -20,5 +20,6 @@ router.get("/login", async (req, res) => {
     return res.redirect('/')
   res.render("login", {error: req.query.error});
 });
+
 
 module.exports = router;
