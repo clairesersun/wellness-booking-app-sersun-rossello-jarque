@@ -1,10 +1,10 @@
 {{!-- all classes --}}
 <div class="classes-background">
-        <!-- hamburger btn -->
         <main class="main-container">
+        <!-- hamburger btn -->
             <div class="hamburger-container">
-              <a href="" class="hamburger"></a> 
               {{!-- add link to profile pg --}}
+              <a href="" class="hamburger"></a> 
             </div>
             <h1 class="white-heading">November</h1>
             <div class="schedule-rows">
@@ -32,15 +32,15 @@
                     <p class="daily-schedule-name">{{name}}</p>
                     <p class="daily-schedule-location">{{location}}</p>
                 </div>
-                <a src="{{!-- got to detial for given post --}}" class="daily-schedule-item daily-schedule-item-btn"><button class="action-btn">Details</button></a>
+                <a src="/classes/:id" class="daily-schedule-item daily-schedule-item-btn"><button class="action-btn">Details</button></a>
                 <div class="daily-schedule-div"></div>
             </div>
             {{/each}}
             <div class="divider"></div>
             <div class="bottom-align">
-            <img src="" class="img-classes">    {{!-- ask for this --}}
+            <img src="/public/imgs/4Asana.png" class="img-classes"> 
             <button class="classes-btn-clicked"> Classes </button>
-            <a scr="{{!-- go to schedule page --}}"><button class="schedule-btn">Schedule</button></a>
+            <a scr="/booked-classes/"><button class="schedule-btn">Schedule</button></a>
         </div>
         </main>
     </div>

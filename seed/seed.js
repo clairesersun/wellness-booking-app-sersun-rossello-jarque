@@ -33,7 +33,7 @@ connection.once("open", async function () {
         date: new Date("11/28/2022").getTime(),
         time: new Date("7:00 AM EDT").getTime(),
         description: "<p>Slow down, relax, and turn inward in a series of asanas that improves flexibility, boosts circulation, and reduces tension.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'./public/imgs/1Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: true
@@ -44,7 +44,7 @@ connection.once("open", async function () {
         date: new Date("11/28/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("9:30 AM EDT").getTime(),
         description: "<p>A strengthening and lengthening form of exercise that focuses on your core muscles while also training your arms and legs.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/4Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: true
@@ -55,7 +55,7 @@ connection.once("open", async function () {
         date: new Date("11/28/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("6:00 PM EDT").getTime(),
         description: "<p>A fast-paced style of yoga that's focused on building strength and endurance.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/5Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: false
@@ -66,7 +66,7 @@ connection.once("open", async function () {
         date: new Date("11/29/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("12:00 PM EDT").getTime(),
         description: "<p>Focus on calming the mind through guided meditation and breathe practices</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/4Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: false
@@ -77,7 +77,7 @@ connection.once("open", async function () {
         date: new Date("11/29/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("6:00 PM EDT").getTime(),
         description: "<p>A fast-paced style of yoga that's focused on building strength and   endurance.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/2Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: true
@@ -88,7 +88,7 @@ connection.once("open", async function () {
         date: new Date("11/30/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("11:00 AM EDT").getTime(),
         description: "<p>An introductory class to introduce practicioners to the work of pranayama  and how to incorporate it into their practices as well as daily life.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/7Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: true
@@ -99,7 +99,7 @@ connection.once("open", async function () {
         date: new Date("11/30/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("7:00 PM EDT").getTime(),
         description: "<p>A strengthening and lengthening form of exercise that focuses on your  core muscles while also training your arms and legs.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/7Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: false
@@ -110,7 +110,7 @@ connection.once("open", async function () {
         date: new Date("12/1/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("5:30 AM EDT").getTime(),
         description: "<p>A fast-paced style of yoga that's focused on building strength and   endurance.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/2Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: false
@@ -121,7 +121,7 @@ connection.once("open", async function () {
         date: new Date("12/1/2022").getTime(),
         time: new Date("6:45 PM EDT").getTime(),
         description: "<p>Slow down, relax, and turn inward in a series of asanas that improves  flexibility, boosts circulation, and reduces tension.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/1Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: true
@@ -132,7 +132,7 @@ connection.once("open", async function () {
         date: new Date("12/2/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("12:00 PM EDT").getTime(),
         description: "<p>Focus on calming the mind through guided meditation and breathe  practices</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/8Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: true
@@ -143,7 +143,7 @@ connection.once("open", async function () {
         date: new Date("12/2/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("5:30 PM EDT").getTime(),
         description: "<p>A strengthening and lengthening form of exercise that focuses on your  core muscles while also training your arms and legs.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/6Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: false
@@ -154,7 +154,7 @@ connection.once("open", async function () {
         date: new Date("12/3/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("8:00 AM EDT").getTime(),
         description: "<p>A fast-paced style of yoga that's focused on building strength and   endurance.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/2Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: false
@@ -165,7 +165,7 @@ connection.once("open", async function () {
         date: new Date("12/3/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("9:15 AM EDT").getTime(),
         description: "<p>Focus on calming the mind through guided meditation and breathe  practices</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/9Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: false
@@ -176,7 +176,7 @@ connection.once("open", async function () {
         date: new Date("12/4/2022").getTime(), /*what fnc gets me the date only*/
         time: new Date("10:30 AM EDT").getTime(),
         description: "<p>A fast-paced style of yoga that's focused on building strength and   endurance.</p>",
-        img:/* How to do this? Find the img url or link to folder in repo */,
+        img:'/public/imgs/2Asana.png',
         location: "" /* This is where the api comes in */,
         locationImg: /* This is where the api comes in */"",
         booked: true
