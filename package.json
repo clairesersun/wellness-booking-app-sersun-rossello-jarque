@@ -1,7 +1,9 @@
 {
     "name": "wellness-booking-app",
     "version": "1.0.0",
-    "description": "Created a server-rendered wellness booking application using Node, Express, and database technology.",
+
+    "description": "Create a server-rendered wellness booking application using Node, Express, and database technology",
+
     "main": "index.js",
     "scripts": {
       "start": "node index.js",
@@ -13,12 +15,16 @@
       "seed": "node seed/seed.js",
       "mongo": "npm run mongo:restart && node test/db_check.js && npm run seed",
       "mongo:restart": "npm run mongo:stop; npm run mongo:start",
-      "mongo:start": "export DB_NAME=wellness-booking-app && docker run --rm -d -p 27017:27017 --name=mongo-sandbox -e MONGO_INITDB_DATABASE=$DB_NAME mongo:5",
+
+      "mongo:start": "export DB_NAME=mongo_blog && docker run --rm -d -p 27017:27017 --name=mongo-sandbox -e MONGO_INITDB_DATABASE=$DB_NAME mongo:5",
+
       "mongo:stop": "docker container stop mongo-sandbox",
       "mongo:shell": "docker exec -it mongo-sandbox mongosh"
     },
     "keywords": [],
-    "author": "",
+
+    "author": "Sersun, Rosello, Jarque",
+
     "license": "ISC",
     "dependencies": {
       "bcrypt": "^5.0.1",
@@ -37,4 +43,6 @@
       "nodemon": "^2.0.16",
       "supertest": "^6.2.3"
     }
+
   }
+  

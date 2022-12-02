@@ -1,0 +1,49 @@
+{{!-- all classes --}}
+<div class="classes-background">
+        <main class="main-container">
+        <!-- hamburger btn -->
+            <div class="hamburger-container">
+              {{!-- add link to profile pg --}}
+              <a href="" class="hamburger"></a> 
+            </div>
+            <h1 class="white-heading">November</h1>
+            <div class="schedule-rows">
+                <p class="schedule-rows-item schedule-rows-number">28</p>
+                <p class="schedule-rows-item schedule-rows-number">29</p>
+                <p class="schedule-rows-item schedule-rows-number">30</p>
+                <p class="schedule-rows-item schedule-rows-number">1</p>
+                <p class="schedule-rows-item schedule-rows-number">2</p>
+                <p class="schedule-rows-item schedule-rows-number">3</p>
+                <p class="schedule-rows-item schedule-rows-number">4</p>
+                <button class="schedule-rows-item schedule-rows-day">M</button>
+                <button class="schedule-rows-item schedule-rows-day">T</button>
+                <button class="schedule-rows-item schedule-rows-day">W</button>
+                <button class="schedule-rows-item schedule-rows-day">T</button>
+                <button class="schedule-rows-item schedule-rows-day">F</button>
+                <button class="schedule-rows-item schedule-rows-day">S</button>
+                <button class="schedule-rows-item schedule-rows-day">S</button>
+            </div>
+            <div class="divider"></div>
+            {{#each classes}}
+                {{!-- scrolling list of current classes --}}
+                <div class="daily-schedule-containter">
+                <p class="daily-schedule-item daily-schedule-item-time">{{time}}</p>
+                <div class="daily-schedule-item daily-schedule-item-2">
+                    <p class="daily-schedule-name">{{name}}</p>
+                    <p class="daily-schedule-location">{{location}}</p>
+                </div>
+                <a src="/classes/:id" class="daily-schedule-item daily-schedule-item-btn"><button class="action-btn">Details</button></a>
+                <div class="daily-schedule-div"></div>
+            </div>
+            {{/each}}
+            <div class="divider"></div>
+            <div class="bottom-align">
+            <img src="/public/imgs/4Asana.png" class="img-classes"> 
+            <button class="classes-btn-clicked"> Classes </button>
+            <a scr="/booked-classes/"><button class="schedule-btn">Schedule</button></a>
+        </div>
+        </main>
+    </div>
+        <script src="/index.js">
+            // on click btn in schedule, the classes change to given day and the day's background gets changed to teal
+        </script>
