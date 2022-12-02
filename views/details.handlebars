@@ -1,46 +1,91 @@
 {{!-- details for classes - do an if it is booked do this and if it is not do this --}}
 
 <div class="classes-background">
-        <main>
-            <h1 class="white-heading">
-                {{name}}
-            </h1>
-            <div class="text-box-container">
-                <h2 class="thin-text">{{when}}</h2>
-                <p class="bold-text">{{description}}</p>
-                <p class="thin-text">{{location}}</p>
-                <img src="{{locationImg}}" class="location-img">
-            </div>
-            {{#if classes.booked}}
-            <a scr="{{!-- go to previous page --}}" class="back-btn"><p>Back</p></a>
-            <a scr="{{!-- pop up to confirm --}}" class="cancel-btn action-btn"><p>Cancel</p></a>
-            {{/if}}
-            {{#if !classes.booked}}
-            <a src="{{!-- go to previous page --}}" class="back-btn"><p>Back</p></a>
-            <a src="{{!-- pop up to confirm --}}" class="book-btn action-btn"><p>Book</p></a>
-            {{/if}}
-            
-            </main>
-        </div>
-            <script>
-              document.querySelectorAll('.cancel-btn').forEach(btn => {
-                btn.onclick = function(e) {
-                  const {classId} = e.target.dataset
-                  fetch('/api/classes/' + classId, {method: 'UPDATE'})
-                    .then(function(res) {
-                      if (res.status === 200)
-                        window.location.reload()
-                    })
-                }
-              })
-               document.querySelectorAll('.book-btn').forEach(btn => {
-                btn.onclick = function(e) {
-                  const {classId} = e.target.dataset
-                  fetch('/api/classes/' + classId, {method: 'UPDATE'})
-                    .then(function(res) {
-                      if (res.status === 200)
-                        window.location.reload()
-                    })
-                }
-              })
-            </script>
+          <main>
+              <h1 class="white-heading">
+                  {{name}}
+              </h1>
+              <div class="text-box-container">
+                  <h2 class="thin-text">{{when}}</h2>
+                  <p class="bold-text">{{description}}</p>
+                  <p class="thin-text">{{location}}</p>
+                  <img src="{{locationImg}}" class="location-img">
+              </div>
+              {{#if classes.booked}}
+              <a scr="/booked-classes" class="back-btn"><p>Back</p></a>
+              <button class="action-btn cancel">Cancel</button>
+              <div class="confirm-cancel-pop">
+                <p class="confirm-cancel-txt">Are you sure you want to cancel?</p>
+                <button class="cancel-btn">Confirm Cancelation</button>
+              </div>
+              {{/if}}
+              {{#if !classes.booked}}
+              <a src="/classes" class="back-btn"><p>Back</p></a>
+              <button class="book-btn action-btn">
+                Book
+              </button>
+              <p class="booked-text">Your class has been scheduled!</p>
+              {{/if}}
+              
+              </main>
+          </div>
+              <script>
+document.querySelector('.booked-text').forEach(btn => {
+                  btn.onclick = async function(e) {
+                    document.querySelector(".booked-text").style.visibility = "visible";
+                    await delay(3000);
+                    
+                    const {classId} = e.target.dataset
+                    fetch('/api/classes/' + classId, {method: 'UPDATE'})
+                      .then(function(res) {
+                        if (res.status === 200)
+                          window.location.reload()
+                      })
+                  }
+                })
+
+                document.querySelector('.cancel').forEach(btn => {
+                  btn.onclick = async function(e) {
+                    document.querySelector(".confirm-cancel-pop").style.visibility = "visible";
+                    
+                    const {classId} = e.target.dataset
+                    fetch('/api/classes/' + classId, {method: 'UPDATE'})
+                      .then(function(res) {
+                        if (res.status === 200)
+                          window.location.reload()
+                      })
+                  }
+                })
+
+                document.querySelector('.cancel-btn').forEach(btn => {
+                  btn.onclick = async function(e) {
+                    const {classId} = e.target.dataset
+                    fetch('/api/classes/' + classId, {method: 'UPDATE'})
+                      .then(function(res) {
+                        if (res.status === 200)
+                          window.location.reload()
+                      })
+                  }
+                })
+
+                document.querySelectorAll('.cancel-btn').forEach(btn => {
+                  btn.onclick = function(e) {
+                    const {classId} = e.target.dataset
+                    fetch('/api/classes/' + classId, {method: 'UPDATE'})
+                      .then(function(res) {
+                        if (res.status === 200)
+                          window.location.reload()
+                      })
+                  }
+                })
+                 document.querySelectorAll('.book-btn').forEach(btn => {
+                  btn.onclick = function(e) {
+                    const {classId} = e.target.dataset
+                    fetch('/api/classes/' + classId, {method: 'UPDATE'})
+                      .then(function(res) {
+                        if (res.status === 200)
+                          window.location.reload()
+                      })
+                  }
+                })
+              </script>

@@ -55,6 +55,31 @@
     font-size: var(--font-size-1);
 }
 
+.hamburger-container{
+    display: inline-block;
+    width: 100%;
+    justify-items: right;
+    align-items: right;
+}
+
+.hamburger {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        justify-content: right;
+        float: right;
+        border: none;
+        padding: 0px;
+        background: linear-gradient(
+          to bottom, 
+          var(--tertiary-color), var(--tertiary-color) 20%, 
+          var(--main-color) 20%, var(--main-color) 40%, 
+          var(--tertiary-color) 40%, var(--tertiary-color) 60%, 
+          var(--main-color) 60%, var(--main-color) 80%, 
+          var(--tertiary-color) 80%, var(--tertiary-color) 100%
+        );
+}
+
 .thin-text{
     font-weight: var(--font-regular);
 }
@@ -103,6 +128,39 @@
     padding-bottom: 5px;
     box-shadow: var(--box-shadow);
     margin: 10%;
+}
+
+.confirm-cancel-pop {
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.confirm-cancel-txt {
+    font-weight: var(--font-bold);
+    text-align: center;
+}
+
+.cancel-btn {
+    display: inline-block;
+    border: 0;
+    font-weight: var(--font-regular);
+    background-color: var(--quaternary-color);
+    color: var(--tertiary-color);
+    border-radius: var(--round-corners);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: var(--box-shadow);
+    margin: 10%;
+}
+
+.booked-text{
+    color: var(--quaternary-color);
+    text-align: center;
+    visibility: hidden;
+    font-weight: var(--font-bold);
 }
 
 .schedule-rows {
@@ -380,12 +438,15 @@
 
   .slider-location {
     display: inline-block;
+    padding-top: 25px;
     color: var(--quaternary-color);
     top: 0;
     left: 0;
   }
   .slider-location-img {
-    display: inline-block;
+    float: right;
+    height: 50px;
+    width: auto;
     color: var(--quaternary-color);
     top: 0;
     left: 0;
@@ -395,7 +456,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50vw;
+    width: 40vw;
+    opacity: 80%;
     text-align: center;
     background-color: var(--faded-tan);
     border-radius: var(--round-corners);

@@ -10,7 +10,7 @@ async function classes (req, res, next) {
             time: 'numeric',
         })
 
-        res.render('classes', {classes, isLoggedIn: req.session.isLoggedIn})
+        res.render('/classes', {classes, isLoggedIn: req.session.isLoggedIn})
     } catch(err) {
     res.status(500).send(err.message)
     }
@@ -37,11 +37,13 @@ async function bookedClasses (req, res, next) {
             day: 'numeric',
             time: 'numeric',
         })
-        res.render('booked-classes', {classDetails, nextClassDetails, isLoggedIn: req.session.isLoggedIn})
+        res.render('/booked-classes', {classDetails, nextClassDetails, isLoggedIn: req.session.isLoggedIn})
     } catch(err) {
     res.status(500).send(err.message)
     }
 }
+
+
 
 
 module.exports = {

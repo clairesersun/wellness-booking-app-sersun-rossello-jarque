@@ -20,6 +20,6 @@ router.get("/booked-classes/", checkAuth, controllers.classes.bookedClasses)
 //display all classes
 router.get("/classes", checkAuth, controllers.classes.classes)
 //display class info
-router.get("/classes/:slug/", checkAuth, controllers.classdetails.classDetails)
+router.get("/classes/:id", checkAuth, controllers.classdetails.classDetails)
 
 module.exports = router;

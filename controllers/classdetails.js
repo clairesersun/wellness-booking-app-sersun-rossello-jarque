@@ -1,41 +1,5 @@
 const { ClassInfo } = require('../models')
 
-//Renders the view of all class details for particular day
-
-// async function classDetails(req, res) {
-//     try {
-//         // get by single tag id if included
-//         const mongoQuery = {}
-//         if (req.query.tag) {
-//           const tagDoc =  await Tag.findOne({name: req.query.tag}).lean()
-//           if (tagDoc)
-//             mongoQuery.tags = {_id: tagDoc._id }
-//         }
-//         const postDocs = await Post
-//           .find(mongoQuery)
-//           .populate({
-//             path: 'tags'
-//           })
-//           .sort({createdAt: 'DESC'})
-//         const posts = postDocs.map(post => {
-//           post = post.toObject()
-//           post.createdAt = new Date(post.createdAt).toLocaleString('en-US', {
-//             weekday: 'short',
-//             month: 'short',
-//             day: 'numeric',
-//             year: 'numeric',
-//           })
-//           return post
-//         })
-//         res.render('index', {
-//           posts,
-//           isLoggedIn: req.session.isLoggedIn,
-//           tag: req.query.tag
-//         })
-//       } catch(err) {
-//         res.status(500).send(err.message)
-//       }}
-
 //Renders the class details
 async function classDetails (req, res, next) {
     try {
