@@ -1,0 +1,69 @@
+{{> header}}
+<main>
+  <h2>Edit Account</h2>
+  <form id="editAcctForm" class="edit-form" action="/api/account" method="UPDATE">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="password">Repeat Password</label>
+      <input type="password" id="password_repeat" name="password_repeat" required>
+
+    <button>Save</button>
+    <a href="/profile">Profile</a>
+  </form>
+
+  <div class="actionBtns">
+    <button id="back" class="backBtn"> Back </button>
+    <button id="delete" class="deleteBtn" action="/api/delete"> Delete Account</button>
+  </div>
+
+
+        {{#if account.updated}}
+            <a scr="/profile" class="back"><p>Back</p></a>
+            <a scr="/profile" class="saveBtn"><p>Save</p></a>
+        {{/if}}
+        
+        {{#if !account.updated}}
+            <button class="deleteBtn">Delete Account</button>
+            <div class="confirm-del-acct">
+            <p class="confirm-delete-txt">Are you sure you want to delete your account?</p>
+            <button class="deleteBtn">Delete</button>
+            </div>
+            <p class="confirmed-text">Successfully Deleted</p>
+        {{/if}}
+</main>
+{{> footer}}
+
+<script>
+document.querySelector('form').onsubmit = function(e) {
+    e.preventDefault()
+    const values = {
+      username: e.target.elements.username.value
+      name: e.target.elements.name.value
+      email: e.target.elements.email.value
+    }
+    const url = '/api/post' + (e.target.dataset.postId ? "/" + e.target.dataset.postId : "")
+    fetch(url, {
+      method: window.location.pathname.includes('create') ? 'POST' : 'PUT',
+      body: JSON.stringify(values),
+      headers: {
+        "content-type": "application/json"
+      }
+    })
+    .then(res => {
+      if (res.status === 200) {
+        window.location.replace('/')
+      }
+    })
+  }
+
+</script>
