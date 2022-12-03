@@ -1,9 +1,30 @@
 {{> header}}
 <main>
-    <h1>Hello {{username}}</h1>
+    <h1>Hello {{name}}</h1>
 
-<div class="center"
+<div class="center">
    <img src="/public/imgs/Profile Icon.png" class="profile-icon"> 
-   <p 
+   <p class="usernameDisplay">{{username}}</p> 
+</div>
 
+<div class="actionBtns">
+    <button id="edit" class="editBtn"> Edit Account </button>
+    <button id="classes" class="classes"> Classes </button>
+    <button id="logOut" class="logOut"> Log Out </button>
+</div>
 </main>
+
+<script>
+  document.getElementById("edit").onclick = function () {
+    window.location.replace("/edit_acct.js")
+  }
+
+    document.getElementById("classes").onclick = function () {
+    window.location.replace("/Classes.js")
+  }
+
+     document.getElementById("logOut").onclick = function () {
+    window.location.replace("/")
+  }
+
+</script>
