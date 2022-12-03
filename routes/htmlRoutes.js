@@ -28,5 +28,7 @@ router.get("/profile", function (req, res, next) {
   req.render('profile', {title: 'profile', user: user});
 });
 
+//get account page
+router.get("/classes", checkAuth, controllers.account)
 
 module.exports = router;
