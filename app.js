@@ -9,6 +9,7 @@ const htmlRoutes = require('./routes/htmlRoutes')
 const app = express();
 app.use(session({ secret: 'somevalue' }));
 
+
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions'
