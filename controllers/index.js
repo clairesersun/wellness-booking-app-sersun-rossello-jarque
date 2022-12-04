@@ -1,3 +1,4 @@
+const auth = require('./auth')
 const account = require('./account')
 const profile = require('./profile')
 const classdetails = require('./classdetails')
@@ -7,5 +8,6 @@ module.exports = {
     classdetails,
     classes,
     account,
-    profile
+    profile,
+    auth
 }

@@ -7,6 +7,8 @@ const { MONGODB_URI } = require('./config/connection')
 const apiRoutes = require('./routes/apiRoutes')
 const htmlRoutes = require('./routes/htmlRoutes')
 const app = express();
+app.use(session({ secret: 'somevalue' }));
+
 
 const store = new MongoDBStore({
   uri: MONGODB_URI,
@@ -18,7 +20,7 @@ store.on('error', function(error) {
   console.log(error);
 });
 
-app.use(session({
+/*app.use(session({
   secret: process.env.SESSION_SECRET,
   name: 'mongo-blog-session',
   cookie: {
@@ -27,7 +29,7 @@ app.use(session({
   store,
   resave: true,
   saveUninitialized: false
-}));
+}));*/
 
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
