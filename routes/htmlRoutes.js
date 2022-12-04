@@ -22,4 +22,13 @@ router.get("/classes", checkAuth, controllers.classes.classes)
 //display class info
 router.get("/classes/:id", checkAuth, controllers.classdetails.classDetails)
 
+//get profile page
+router.get("/profile", function (req, res, next) {
+    var user = req.user;
+  req.render('profile', {title: 'profile', user: user});
+});
+
+//get account page
+router.get("/classes", checkAuth, controllers.account)
+
 module.exports = router;
